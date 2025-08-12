@@ -1,0 +1,194 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; // prevents horizontal scroll
+}
+
+.signupContainer {
+  display: flex;
+  flex-direction: row; // default: row for tablet & desktop
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Left Side */
+.leftContainer {
+  flex: 1 1 50%;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    color: #7c7c7c;
+  }
+
+  .sign_in_link {
+    color: #2baab1;
+    cursor: pointer;
+  }
+}
+
+/* Form */
+.formContainer {
+  max-width: 31rem;
+  margin: 2rem auto;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+
+.formHeader_subheading {
+  color: #7c7c7c;
+  line-height: 1.3rem;
+}
+
+.formHeader_google_btn {
+  background: #f7f7f7;
+  border: none;
+  padding: 0.8rem;
+  cursor: pointer;
+}
+
+.input_container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  label {
+    color: #000000;
+  }
+
+  input {
+    padding: 0.5rem;
+    background-color: #f7f7f7;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    width: 100%;
+  }
+}
+
+.input_fullname {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.input_lower {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+// .passwordWrapper {
+//   position: relative;
+
+//   input {
+//     width: 100%;
+//     padding-right: 2.5rem;
+//   }
+
+//   .eyeIcon {
+//     position: absolute;
+//     top: 50%;
+//     right: 0.8rem;
+//     transform: translateY(-50%);
+//     cursor: pointer;
+//     color: #555;
+//   }
+// }
+
+.passwordWrapper {
+  position: relative;
+  width: 100%;
+
+  input {
+    padding: 0.5rem;
+    padding-right: 2.5rem;
+    background-color: #f7f7f7;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    box-sizing: border-box; // Prevent width overflow
+  }
+
+  .eyeIcon {
+    position: absolute;
+    top: 50%;
+    right: 0.8rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #555;
+  }
+}
+
+.agree_to_heading {
+  color: #000;
+  font-size: 1rem;
+}
+
+.agree_to_container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.input_checkbox {
+  color: #494949;
+}
+
+/* Create Button */
+.create_btn {
+  width: 10rem;
+  background-color: #2baab1;
+  color: #fff;
+  padding: 1rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.mainContainer {
+  flex: 1 1 50%;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 768px) {
+  .signupContainer {
+    flex-direction: column; // stack on mobile
+  }
+
+  .leftContainer,
+  .mainContainer {
+    flex: 1 1 100%;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .input_fullname {
+    grid-template-columns: 1fr;
+  }
+
+  .create_btn {
+    width: 100%;
+  }
+
+  .mainContainer {
+    display: none; // hide right side on mobile
+  }
+}

@@ -15,7 +15,7 @@ body {
 /* Left Side */
 .leftContainer {
   flex: 1 1 50%;
-  padding: 2rem;
+  // padding: 2rem;
   box-sizing: border-box;
 }
 
@@ -48,6 +48,10 @@ body {
 .formHeader_subheading {
   color: #7c7c7c;
   line-height: 1.3rem;
+}
+.formHeader_heading2 {
+  font-weight: 600;
+  line-height: 1.2rem;
 }
 
 .formHeader_google_btn {
@@ -89,24 +93,6 @@ body {
   margin: 1rem 0;
 }
 
-// .passwordWrapper {
-//   position: relative;
-
-//   input {
-//     width: 100%;
-//     padding-right: 2.5rem;
-//   }
-
-//   .eyeIcon {
-//     position: absolute;
-//     top: 50%;
-//     right: 0.8rem;
-//     transform: translateY(-50%);
-//     cursor: pointer;
-//     color: #555;
-//   }
-// }
-
 .passwordWrapper {
   position: relative;
   width: 100%;
@@ -118,7 +104,7 @@ body {
     border: none;
     outline: none;
     font-size: 1rem;
-    box-sizing: border-box; // Prevent width overflow
+    box-sizing: border-box;
   }
 
   .eyeIcon {
@@ -167,10 +153,21 @@ body {
   }
 }
 
+.error_text {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
 /* RESPONSIVE BREAKPOINTS */
 @media (max-width: 768px) {
   .signupContainer {
-    flex-direction: column; // stack on mobile
+    flex-direction: column;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .leftContainer,
@@ -189,6 +186,6 @@ body {
   }
 
   .mainContainer {
-    display: none; // hide right side on mobile
+    display: none;
   }
 }

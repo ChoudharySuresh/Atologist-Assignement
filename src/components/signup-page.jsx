@@ -105,28 +105,25 @@ export default function SignupPage() {
 
     if (!valid) return;
 
-    const payload = {
-      data: {
-        firstname: formData.firstName,
-        lastname: formData.lastName,
-        email: formData.email,
-        encryptpassword: formData.password,
-        dob: formData.dob,
-      },
-    };
+    const payload = new FormData();
+    payload.append("firstname", formData.firstName);
+    payload.append("lastname", formData.lastName);
+    payload.append("email", formData.email);
+    payload.append("encryptpassword", formData.password);
+    payload.append("dob", formData.dob);
 
     try {
       const res = await fetch(
         "https://atologistinfotech.com/api/register.php",
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
+          body: payload,
         }
       );
 
       const data = await res.json();
       console.log("API Response:", data);
+
       if (data.success) {
         setToast({
           message: data.message || "Account created successfully!",
@@ -138,11 +135,9 @@ export default function SignupPage() {
           type: "error",
         });
       }
-      // alert("Account created successfully!");
     } catch (error) {
       console.error("API Error:", error);
       setToast({ message: "Network error, please try again", type: "error" });
-      // alert("Something went wrong");
     }
   };
 
